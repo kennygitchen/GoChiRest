@@ -21,11 +21,7 @@ func main() {
 	r.Use(middleware.Recoverer)
 
 	r.Get("/rand", func(w http.ResponseWriter, r *http.Request) {
-
         number := random.Float64()
-        for i := 0; i<10000000; i++ {
-            number += 1
-        }
 		w.Write([]byte(fmt.Sprintf("%f",number)))
 	})
 
